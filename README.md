@@ -1,8 +1,10 @@
 # odd-duck
 
-
-
 ![labelforimg](url)
+
+# Author and Help
+Author: Alex Chao
+Help from Rocio Martinez with CSS
 
 # references
 
