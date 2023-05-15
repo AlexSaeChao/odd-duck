@@ -1,6 +1,7 @@
 # odd-duck
 
-![labelforimg](url)
+# Accessibility screen shots
+![15 MAY 2023 Screenshot of accessibility](img/20230515-odd-duck-index-accessibility.png)
 
 # Author and Help
 Author: Alex Chao
