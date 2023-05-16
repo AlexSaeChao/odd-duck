@@ -62,18 +62,18 @@ function handleImgClick(event){
   // console.dir(event.target);
   // console.log(imageClicked);
 
-  // TODO: Increase the vote on that image
+
   for(let i = 0; i < merchArray.length; i++){
     if(imageClicked === merchArray[i].name){
       merchArray[i].votes++;
-      // TODO: decrement the voting round
+
       votingRounds--;
-      // TODO: generate new images
+
       renderImgs();
     }
   }
 
-  // TODO: once voting are done, we want to remove the ability to click
+
   if(votingRounds === 0){
     imgContainer.removeEventListener('click', handleImgClick);
   }
@@ -83,11 +83,11 @@ function handleImgClick(event){
 function handleShowResults(){
   if(votingRounds === 0){
     for(let i = 0; i < merchArray.length; i++){
-      let goatListItem = document.createElement('li');
+      let resultsListItem = document.createElement('li');
 
-      goatListItem.textContent = `${merchArray[i].name} - Votes: ${merchArray[i].votes} & Views: ${merchArray[i].views}`;
+      resultsListItem.textContent = `${merchArray[i].name} - Votes: ${merchArray[i].votes} & Views: ${merchArray[i].views}`;
 
-      resultsList.appendChild(goatListItem);
+      resultsList.appendChild(resultsListItem);
     }
     resultBtn.removeEventListener('click', handleShowResults);
   }
