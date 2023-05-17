@@ -113,13 +113,12 @@ function renderChart() {
   };
 
   new Chart(ctx, tallyChart);
-  
 }
 
 
 // **** EVENT HANDLERS ****
 function handleImgClick(event) {
-
+  event.preventDefault();
 
   let imageClicked = event.target.title;
   // console.dir(event.target);
@@ -139,6 +138,12 @@ function handleImgClick(event) {
 
   if (votingRounds === 0) {
     imgContainer.removeEventListener('click', handleImgClick);
+
+    // the local storage here
+    let stringifedMerch = JSON.stringify(merchArray);
+    console.log('stringifed objects ===>', stringifedMerch);
+
+    localStorage.setItem('myMerch', stringifedMerch);
   }
 
 }
@@ -151,28 +156,44 @@ function handleShowResults() {
 }
 
 // **** EXECUTABLE CODE *****
-let bag = new Merch('bag');
-let banana = new Merch('banana');
-let bathroom = new Merch('bathroom');
-let boots = new Merch('boots');
-let breakFast = new Merch('breakfast');
-let bubbleGum = new Merch('bubblegum');
-let chair = new Merch('chair');
-let cthulhu = new Merch('cthulhu');
-let dogDuck = new Merch('dog-duck');
-let dragon = new Merch('dragon');
-let pen = new Merch('pen');
-let petSweep = new Merch('pet-sweep');
-let scissors = new Merch('scissors');
-let shark = new Merch('shark');
-let sweep = new Merch('sweep', 'png');
-let tauntaun = new Merch('tauntaun');
-let unicorn = new Merch('unicorn');
-let waterCan = new Merch('water-can');
-let wineGlass = new Merch('wine-glass');
+
+let beautifiedMerch = localStorage.getItem('myMerch');
+console.log('beautifed objects ===>', beautifiedMerch);
+
+let parsedMerch = JSON.parse(beautifiedMerch);
+console.log('parsed objects ===>', parsedMerch);
 
 
-merchArray.push(bag, banana, bathroom, boots, breakFast, bubbleGum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass);
+if (beautifiedMerch) {
+  merchArray = parsedMerch;
+} else {
+  let bag = new Merch('bag');
+  let banana = new Merch('banana');
+  let bathroom = new Merch('bathroom');
+  let boots = new Merch('boots');
+  let breakFast = new Merch('breakfast');
+  let bubbleGum = new Merch('bubblegum');
+  let chair = new Merch('chair');
+  let cthulhu = new Merch('cthulhu');
+  let dogDuck = new Merch('dog-duck');
+  let dragon = new Merch('dragon');
+  let pen = new Merch('pen');
+  let petSweep = new Merch('pet-sweep');
+  let scissors = new Merch('scissors');
+  let shark = new Merch('shark');
+  let sweep = new Merch('sweep', 'png');
+  let tauntaun = new Merch('tauntaun');
+  let unicorn = new Merch('unicorn');
+  let waterCan = new Merch('water-can');
+  let wineGlass = new Merch('wine-glass');
+
+  merchArray.push(bag, banana, bathroom, boots, breakFast, bubbleGum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass);
+}
+
+
+
+
+
 
 
 
