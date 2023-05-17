@@ -2,7 +2,8 @@
 
 # Accessibility screen shots
 <!-- ![15 MAY 2023 Screenshot of accessibility](img/20230515-odd-duck-index-accessibility.png) -->
-![16 MAY 2023 Screenshot of accessibility](img/20230516-odd-duck-index-accessibility.png)
+<!-- ![16 MAY 2023 Screenshot of accessibility](img/20230516-odd-duck-index-accessibility.png) -->
+![17 MAY 2023 Screenshot of accessibility](img/20230517-odd-duck-index-accessibility.png)
 
 
 # Author and Help
