@@ -56,16 +56,16 @@ function renderImgs() {
 
   imgOne.src = merchArray[imageOneIndex].image;
   imgOne.title = merchArray[imageOneIndex].name;
-  imgOne.alt = merchArray[imageOneIndex].name;
+  imgOne.alt = `This is an image of a ${merchArray[imageOneIndex].name}.`;
 
 
   imgTwo.src = merchArray[imageTwoIndex].image;
   imgTwo.title = merchArray[imageTwoIndex].name;
-  imgTwo.alt = merchArray[imageTwoIndex].name;
+  imgTwo.alt = `This is an image of a ${merchArray[imageTwoIndex].name}.`;
 
   imgThree.src = merchArray[imageThreeIndex].image;
   imgThree.title = merchArray[imageThreeIndex].name;
-  imgThree.alt = merchArray[imageThreeIndex].name;
+  imgThree.alt = `This is an image of a ${merchArray[imageThreeIndex].name}.`;
 
   merchArray[imageOneIndex].views++;
   merchArray[imageTwoIndex].views++;
