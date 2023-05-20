@@ -1,20 +1,22 @@
 body {
   width: 90vw;
   margin: auto;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(242, 242, 219);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  text-align: center;
 }
 
 h1 {
   background-color: maroon;
-  text-align: center;
   color: aliceblue;
-  font-size: 30px;
+  font-size: 42px;
   padding: 15px;
   margin-bottom: 20px;
 }
 
 h2 {
   margin-bottom: 15px;
+  font-size: 30px;
 }
 
 main section {
@@ -23,6 +25,8 @@ main section {
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
+  border-radius: 25px;
+
 }
 
 main section img {
@@ -30,11 +34,26 @@ main section img {
   height: 20vw;
 }
 
+p {
+  font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
 button {
-  margin: 20px;
+  
+  margin: auto;
+  /* text-align: center; */
+  justify-content: center;
+  width: 300px;
+  height: 150px;
   background-color: rgb(50, 100, 25);
   color: azure;
   transition: 350ms;
+  font-size: 30px;
+  border-radius: 12px;
+  
+
 }
 
 button:hover {
