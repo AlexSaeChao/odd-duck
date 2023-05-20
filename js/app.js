@@ -1,11 +1,9 @@
 'use strict';
 
 
-// ***** GLOBALS ******
 let votingRounds = 25;
 let merchArray = [];
 
-// ***** DOM WINDOWS ****
 let imgContainer = document.getElementById('img-container');
 let imgOne = document.getElementById('img-one');
 let imgTwo = document.getElementById('img-two');
@@ -15,15 +13,12 @@ let attemptsCounter = document.getElementById('attempts-counter');
 
 let ctx = document.getElementById('myChart');
 
-// **** CONSTRUCTOR FUNCTION ****
 function Merch(name, imageExtension = 'jpg') {
   this.name = name;
   this.image = `img/${name}.${imageExtension}`;
   this.votes = 0;
   this.views = 0;
 }
-
-// **** HELPER FUNCTIONS / UTILITIES ****
 
 function randomIndexGenerator() {
   return Math.floor(Math.random() * merchArray.length);
@@ -38,7 +33,6 @@ function renderImgs() {
     if (!previousRound.includes(randomNumber)) {
       previousRound.push(randomNumber);
     }
-
   }
 
   console.log('index Array end of function', previousRound);
@@ -47,17 +41,9 @@ function renderImgs() {
   let imageTwoIndex = previousRound.shift();
   let imageThreeIndex = previousRound.shift();
 
-
-  // // DONE: make sure they are unique
-  // while (imageOneIndex === imageTwoIndex || imageOneIndex === imageThreeIndex || imageTwoIndex === imageThreeIndex) {
-  //   imageTwoIndex = randomIndexGenerator();
-  //   imageThreeIndex = randomIndexGenerator();
-  // }
-
   imgOne.src = merchArray[imageOneIndex].image;
   imgOne.title = merchArray[imageOneIndex].name;
   imgOne.alt = `This is an image of a ${merchArray[imageOneIndex].name}.`;
-
 
   imgTwo.src = merchArray[imageTwoIndex].image;
   imgTwo.title = merchArray[imageTwoIndex].name;
@@ -73,8 +59,6 @@ function renderImgs() {
 
   attemptsCounter.textContent = votingRounds;
 }
-
-
 
 function renderChart() {
   let nameArray = [];
@@ -116,14 +100,10 @@ function renderChart() {
 }
 
 
-// **** EVENT HANDLERS ****
 function handleImgClick(event) {
   event.preventDefault();
 
   let imageClicked = event.target.title;
-  // console.dir(event.target);
-  // console.log(imageClicked);
-
 
   for (let i = 0; i < merchArray.length; i++) {
     if (imageClicked === merchArray[i].name) {
@@ -135,17 +115,15 @@ function handleImgClick(event) {
     }
   }
 
-
   if (votingRounds === 0) {
     imgContainer.removeEventListener('click', handleImgClick);
 
-    // the local storage here
+
     let stringifedMerch = JSON.stringify(merchArray);
     console.log('stringifed objects ===>', stringifedMerch);
 
     localStorage.setItem('myMerch', stringifedMerch);
   }
-
 }
 
 function handleShowResults() {
@@ -154,8 +132,6 @@ function handleShowResults() {
   }
   resultBtn.removeEventListener('click', handleShowResults);
 }
-
-// **** EXECUTABLE CODE *****
 
 let beautifiedMerch = localStorage.getItem('myMerch');
 console.log('beautifed objects ===>', beautifiedMerch);
@@ -189,12 +165,6 @@ if (beautifiedMerch) {
 
   merchArray.push(bag, banana, bathroom, boots, breakFast, bubbleGum, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass);
 }
-
-
-
-
-
-
 
 
 renderImgs();
